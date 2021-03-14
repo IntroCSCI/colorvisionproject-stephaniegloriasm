@@ -53,6 +53,6 @@ int main()
   for (int counter = 0; counter < hexadecimalValues.size(); counter++){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
-  cout << "Run the code again to enter a new file!";
+  cout << "Those are some nice colors! Please, run the code again to enter a new file!";
   return 0;
 }

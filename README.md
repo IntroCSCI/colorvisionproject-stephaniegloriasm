@@ -99,6 +99,9 @@ This program is using file input get a requested file. The user is asked to inpu
 ### Arrays/Vectors
 
 The vector used in this program is called "hexadecimalValues" and it stores the colors given on the requested file.
+```
+vector<string>hexadecimalValues;
+```
 
 ### Functions
 
