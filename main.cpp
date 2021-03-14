@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 
 
@@ -10,43 +11,48 @@ int main()
   string fileName;
   ifstream reader;
   string line = "";
-  string baseColor;
-  string color;
   size_t position;
  
   cout<<"Please name a new file: \n";
   
   getline(cin, fileName);
   reader.open(fileName, ios::in);
+  vector<string>hexadecimalValues;
 
-  if ( reader.is_open() ){
+  if ( reader.is_open() )
+  {
 
-     while (!reader.eof()) {
+     while (!reader.eof()) 
+     {
       getline(reader, line);
       position = line.find("#");
-      if (line[position]) {
 
+      if (line[position]) 
+      {
         int colorValue;
-        for 
-        (colorValue = position += 1; (line[colorValue] >= '0' && line[colorValue] <= '9') || ((line[colorValue] >= 'A' && line[colorValue] <= 'F')) || (line[colorValue] >= 'a' && line[colorValue] <= 'f'); colorValue+=6) 
 
+        for (colorValue = position += 1; colorValue < line.size() && (line[colorValue] >= '0' && line[colorValue] <= '9'|| line[colorValue] >= 'a' && line[colorValue] <= 'f' || line[colorValue] >= 'A' && line[colorValue] <= 'F'); colorValue++) {
 
-        cout << '#'<<colorValue<<endl;
-        {
-           color = line[colorValue];
-          string i = line.substr(position,6);
+          if (line[colorValue+3] < '0' || line[colorValue+3] > '9' && line[colorValue+3] < 'a' || line[colorValue+3] > 'f' && line[colorValue+3] < 'A' || line[colorValue+3] > 'F'){
 
-          if
-            (color.size()==6)
-            cout <<i<< endl;
-            else
-            cout<<"Sorry,we could not find that file\n";
+            hexadecimalValues.push_back(line.substr(position, 3));
+            break;
+          }
+          else{
+            hexadecimalValues.push_back(line.substr(position, 6));
+            break;
+          }
         }
       }
-      
-
      }
   }
+  
+  reader.close();
 
+  cout << "The hexadecimal colors of this file are:\n";
+  for (int counter = 0; counter < hexadecimalValues.size(); counter++){
+    cout << '#' << hexadecimalValues[counter] <<endl;
+  }
+  cout << "Run the code again to enter a new file!";
   return 0;
 }
