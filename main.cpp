@@ -26,43 +26,27 @@ int main()
       position = line.find("#");
       if (line[position]) {
 
-        cout << '#';
-        for (char colorValue = position += 1; (line[colorValue] >= '0' && line[colorValue] <= '9') || ((line[colorValue] >= 'A' && line[colorValue] <= 'F')) || (line[colorValue] >= 'a' && line[colorValue] <= 'f'); colorValue++) 
+        int colorValue;
+        for 
+        (colorValue = position += 1; (line[colorValue] >= '0' && line[colorValue] <= '9') || ((line[colorValue] >= 'A' && line[colorValue] <= 'F')) || (line[colorValue] >= 'a' && line[colorValue] <= 'f'); colorValue+=6) 
 
-      
-    
+
+        cout << '#'<<colorValue<<endl;
         {
-        
-          color = line[colorValue];
-          string colorValue = "123456";
-
-        
-            string value1 = "123456";
-            string part = colorValue.subtr(1);
-            string value2 = "123456";
-            string part1 = colorValue.subtr(2);
-            string value3 = "123456";
-            string part2 = colorValue.subtr(2);
-            string value4 = "123456";
-            string part3 = colorValue.subtr(3);
-            string value5 = "123456";
-            string part4 = colorValue.subtr(4);
-            string value6 = "123456";
-            string part5 = colorValue.subtr(5);
+           color = line[colorValue];
+          string i = line.substr(position,6);
 
           if
-            {
-            color.size()==6
-            cout << color;
-            }
-
-
-          else{
-          break;}
+            (color.size()==6)
+            cout <<i<< endl;
+            else
+            cout<<"Sorry,we could not find that file\n";
         }
       }
-      cout << endl;
+      
+
      }
   }
+
   return 0;
 }
