@@ -49,10 +49,11 @@ int main()
   
   reader.close();
 
-  cout << "The hexadecimal colors of this file are:\n";
+  cout << "The hexadecimal color(s) of this file are/is:\n";
   for (int counter = 0; counter < hexadecimalValues.size(); counter++){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
   cout << "Those are some nice colors! Please, run the code again to enter a new file!";
   return 0;
 }
+//I would like to add vectors and arrays, as well as fix the loop and maybe add some references to get new files? adding new features such as new files and a couple of extra questions would be great.

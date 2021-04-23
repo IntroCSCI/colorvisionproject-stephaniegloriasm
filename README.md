@@ -2,7 +2,7 @@
 
 ## Description
 
-This program helps the user to read the different types of hexadecimal colors that an SVG picture could have. It determines the hexadecimal colors of the file that the user asked for, and it reads one file at a time, so the user would have to run the code again in order to input another file. 
+This program helps the user to read the different types of hexadecimal colors that an SVG picture could have. It determines the hexadecimal colors of the file that the user asked for, and it reads one file at a time, so the user would have to run the code again in order to input another file. Palette Analyzer with svg files
 
 ### v0.2 Updates
 
