@@ -5,6 +5,8 @@
 #include <vector>
 using namespace std;
 
+void printVec(vector<string>);
+
 
 int main()
 {
@@ -22,8 +24,7 @@ int main()
   if ( reader.is_open() )
   {
 
-     while (!reader.eof()) 
-     {
+     while (!reader.eof()){
       getline(reader, line);
       position = line.find("#");
 
@@ -56,4 +57,4 @@ int main()
   cout << "Those are some nice colors! Please, run the code again to enter a new file!";
   return 0;
 }
-//I would like to add vectors and arrays, as well as fix the loop and maybe add some references to get new files? adding new features such as new files and a couple of extra questions would be great.
+//I would like to add vectors and arrays, as well as fix the loop and maybe add some references to get new files? adding new features such as new files and a couple of extra questions would be great. Also, I would like to define the regular colors, so anything outside the primary palette(blue, red, yellow, black, white) is a unique color 
