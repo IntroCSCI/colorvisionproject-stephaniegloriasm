@@ -6,7 +6,7 @@ This program helps the user to read the different types of hexadecimal colors th
 
 ### v0.2 Updates
 
-The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete: being blue, red, yellow, black, and white. Also, the program is updated to the point where if the file is incorrect or not found, it lets the user know about it and it also asks the user if they would like to name a different file. 
+The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete: being blue, red, yellow, black, and white. Also, the program is updated to the point where if the file is incorrect or not found, it lets the user know about it and it also asks the user if they would like to name a different file. In addition, whenever the size of the color is less than 6 characters on the hexadecimal, it checks and lets the user know that
 
 ### v1.0 Updates
 
