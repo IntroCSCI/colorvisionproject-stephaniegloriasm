@@ -6,7 +6,7 @@ This program helps the user to read the different types of hexadecimal colors th
 
 ### v0.2 Updates
 
-The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete: being blue, red, yellow, black, and white. Also, the program is updated to the point where if the file is incorrect or not found, it lets the user know about it and it also asks the user if they would like to name a different file. In addition, whenever the size of the color is less than 6 characters on the hexadecimal, it checks and lets the user know that
+The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete: being blue, red, yellow, black, and white. In addition, whenever the size of the color is less than 6 characters on the hexadecimal, it checks and lets the user know that.
 
 ### v1.0 Updates
 
@@ -98,14 +98,27 @@ This program is using file input get a requested file. The user is asked to inpu
 
 ### Arrays/Vectors
 
-The vector used in this program is called "hexadecimalValues" and it stores the colors given on the requested file.
+The vector used in this program is called "hexadecimalValues". It makes sure to get the values on the chosen file.
 ```
 vector<string>hexadecimalValues;
+
 ```
 
 ### Functions
+It makes sure of sorting these colors as primary or unique, to help the user differentiate these.
 
-*Coming in version 0.2*
+```
+int counter;
+void printVec(vector<string>hexadecimalValues){
+  for (int counter = 0; counter < hexadecimalValues.size(); counter++)
+  cout << "The hexadecimal color(s) of this file are/is:\n";
+      cout << '#' << hexadecimalValues[counter] <<endl;{
+        if (hexadecimalValues[counter]=="#000000"||hexadecimalValues[counter]=="#fff"||hexadecimalValues[counter]=="#ff0000"||hexadecimalValues[counter]=="#fff000"||hexadecimalValues[counter]=="#ffffff"||hexadecimalValues[counter]=="#0000ff"){
+          cout<<"These colors are in the primary color range:"<<hexadecimalValues[counter];
+        }
+        else{
+          cout<<"These are unique colors:\n";//<<hexadecimalValues[counter];
+```
 
 ### Classes
 

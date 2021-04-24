@@ -51,30 +51,26 @@ int main()
             cout << "I am sorry, that is not a valid number";
         }
 
-      
-
       }
      }
   }
   
   reader.close();
-
-  cout << "The hexadecimal color(s) of this file are/is:\n";
-  for (int counter = 0; counter < hexadecimalValues.size(); counter++){
-    cout << '#' << hexadecimalValues[counter] <<endl;{
-      if (hexadecimalValues[counter]=="#000000"||hexadecimalValues[counter]=="#fff"||hexadecimalValues[counter]=="#ff0000"||hexadecimalValues[counter]=="#fff000"||hexadecimalValues[counter]=="#ffffff"||hexadecimalValues[counter]=="#0000ff"){
-        cout<<"These colors are in the primary color range:"<<hexadecimalValues[counter];
-      }
-      else{
-        cout<<"These are unique colors:"<<hexadecimalValues[counter];
-      }
-    }
-  }
-
-
-
-  cout << "Those are some nice colors! Please, run the code again to enter a new file!";
-  
- return 0;
+ printVec(hexadecimalValues);
 }
-//I would like to add vectors and arrays, as well as fix the loop and maybe add some references to get new files? adding new features such as new files and a couple of extra questions would be great. Also, I would like to define the regular colors, so anything outside the primary palette(blue, red, yellow, black, white) is a unique color 
+
+int counter;
+void printVec(vector<string>hexadecimalValues){
+  for (int counter = 0; counter < hexadecimalValues.size(); counter++)
+  cout << "The hexadecimal color(s) of this file are/is:\n";
+      cout << '#' << hexadecimalValues[counter] <<endl;{
+        if (hexadecimalValues[counter]=="#000000"||hexadecimalValues[counter]=="#fff"||hexadecimalValues[counter]=="#ff0000"||hexadecimalValues[counter]=="#fff000"||hexadecimalValues[counter]=="#ffffff"||hexadecimalValues[counter]=="#0000ff"){
+          cout<<"These colors are in the primary color range:"<<hexadecimalValues[counter];
+        }
+        else{
+          cout<<"These are unique colors:\n";//<<hexadecimalValues[counter];
+     }
+    }
+  
+  cout << "Those are some nice colors! Please, run the code again to enter a new file!";
+}
