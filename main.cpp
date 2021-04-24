@@ -59,18 +59,11 @@ int main()
  printVec(hexadecimalValues);
 }
 
-int counter;
 void printVec(vector<string>hexadecimalValues){
-  for (int counter = 0; counter < hexadecimalValues.size(); counter++)
-  cout << "The hexadecimal color(s) of this file are/is:\n";
-      cout << '#' << hexadecimalValues[counter] <<endl;{
-        if (hexadecimalValues[counter]=="#000000"||hexadecimalValues[counter]=="#fff"||hexadecimalValues[counter]=="#ff0000"||hexadecimalValues[counter]=="#fff000"||hexadecimalValues[counter]=="#ffffff"||hexadecimalValues[counter]=="#0000ff"){
-          cout<<"These colors are in the primary color range:"<<hexadecimalValues[counter];
-        }
-        else{
-          cout<<"These are unique colors:\n";//<<hexadecimalValues[counter];
-     }
-    }
-  
+    cout << "The hexadecimal colors of this file are:\n";
+  for (int counter = 0; counter < hexadecimalValues.size(); counter++){
+    cout << '#' << hexadecimalValues[counter] <<endl;
+  }
   cout << "Those are some nice colors! Please, run the code again to enter a new file!";
+
 }
