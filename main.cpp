@@ -6,11 +6,12 @@
 using namespace std;
 
 void printVec(vector<string>);
+bool isPrimary(vector<string>&);
+void isUnique(vector<string>&);
 
+int main(){
 
-int main()
-{
-  string fileName;
+  string fileName = "";
   ifstream reader;
   string line = "";
   size_t position;
@@ -24,7 +25,8 @@ int main()
   if ( reader.is_open() )
   {
 
-     while (!reader.eof()){
+     while (!reader.eof())
+     {
       getline(reader, line);
       position = line.find("#");
 
@@ -34,36 +36,68 @@ int main()
 
         for (colorValue = position += 1; colorValue < line.size() && (line[colorValue] >= '0' && line[colorValue] <= '9'|| line[colorValue] >= 'a' && line[colorValue] <= 'f' || line[colorValue] >= 'A' && line[colorValue] <= 'F'); colorValue++) {
 
-          if (line[colorValue+3] < '0' || line[colorValue+3] > '9' && line[colorValue+3] < 'a' || line[colorValue+3] > 'f' && line[colorValue+3] < 'A' || line[colorValue+3] > 'F'){
-
-            hexadecimalValues.push_back(line.substr(position, 3));
-            break;
+          if (line[colorValue+3] < '0' || line[colorValue+3] > '9' && line[colorValue+3] < 'a' || line[colorValue+3] > 'f' && line[colorValue+3] < 'A' || line[colorValue+3] > 'F')
+          {
+            if(isPrimary(line.substr(position, 3), hexadecimalValues)==true)
+            {
+              hexadecimalValues.push_back(line.substr(position, 3));
+              break;
+            }
           }
           else{
-            hexadecimalValues.push_back(line.substr(position, 6));
-            break;
-          }
-        
-          if (line[colorValue]<=6){
-            cout << hexadecimalValues[colorValue];
-            }
-            else //if (line.size()>6){
-            cout << "I am sorry, that is not a valid number";
-        }
 
+            if(isPrimary(line.substr(position, 6), hexadecimalValues)==true){
+              hexadecimalValues.push_back(line.substr(position, 6));
+              break;
+          }
+        }
       }
      }
   }
   
   reader.close();
- printVec(hexadecimalValues);
-}
 
-void printVec(vector<string>hexadecimalValues){
-    cout << "The hexadecimal colors of this file are:\n";
+  cout << "The hexadecimal colors of this file are:\n";
   for (int counter = 0; counter < hexadecimalValues.size(); counter++){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
-  cout << "Those are some nice colors! Please, run the code again to enter a new file!";
+  
+  cout<<"These are primary colors:";
+  isUnique(hexadecimalValues);
 
+  return 0;
+}
+
+
+bool isPrimary(string hColor, vector<string> & primaryColor){
+  for(int pC=0; pC<primaryColor.size();pC++){
+    if(primaryColor[pC]==hColor)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+void isUnique(vector <string> & hexadecimalValues){
+  for( int uC=0;uC<hexadecimalValues.size();uC++){
+
+    if(hexadecimalValues[uC]=="000"){
+      hexadecimalValues[uC]=="000000";
+    }
+    else if(hexadecimalValues[uC]=="ffffff"){
+      hexadecimalValues[uC]=="ffffff";
+    }
+    else if(hexadecimalValues[uC]=="ff"){
+      hexadecimalValues[uC]=="ff0000";
+    }
+    else if(hexadecimalValues[uC]=="fff"){
+      hexadecimalValues[uC]=="fff000";
+    }
+    else if(hexadecimalValues[uC]=="000fff"){
+      hexadecimalValues[uC]=="000fff";
+    }
+    cout<<"#"<<hexadecimalValues[uC]<<endl;
+  }
+  cout << "Those are some nice colors! Please, run the code again to enter a new file!";
 }
