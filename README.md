@@ -96,9 +96,19 @@ vector <string> & hColor
 ```
 
 ### Functions
-This program uses void to store each one of the defined primary colors.
+This program uses void to store each one of the defined primary colors. It also uses the function bool to store the rest of the hexadecimalValues of the chosen file.
 
 ```
+bool isPrimary(string hColor, const vector<string> & primaryColor){
+  for(int pC=0; pC<primaryColor.size();pC++){
+    if(primaryColor[pC]==hColor)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
 void isUnique(vector <string> & hColor){
   for( int uC=0;uC<hColor.size();uC++){
 
