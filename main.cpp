@@ -12,7 +12,7 @@ int main(){
 
   string fileName = "";
   ifstream reader;
-  string line = "";
+  string line = " ";
   size_t position;
  
   cout<<"Please name a new file: \n";
