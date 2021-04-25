@@ -88,10 +88,11 @@ This program is using file input get a requested file. The user is asked to inpu
 
 ### Arrays/Vectors
 
-The vector used in this program stores in the form of a string "hexadecimalValues". It makes sure to get the values on the chosen file. I also added the vector that strings a primary color and an hColor, these are the ones that differentiate the primary/basic colors of a palette to a unique/hard color to find.
+I decided to use vector since it is not a set size for it, and it is convinient for a pallete analyzer. The vector used in this program stores in the form of a string "hexadecimalValues". It makes sure to get the values on the chosen file. I also added the vector that strings a primary color and an hColor, these are the ones that differentiate the primary/basic colors of a palette to a unique/hard color to find.
 ```
 vector<string>hexadecimalValues;
-
+vector<string> & primaryColor
+vector <string> & hColor
 ```
 
 ### Functions
