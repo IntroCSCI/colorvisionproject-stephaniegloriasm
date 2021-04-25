@@ -62,8 +62,9 @@ int main(){
   for (int counter = 0; counter < hexadecimalValues.size(); counter++){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
+  cout<< "These colors are primary: "<<'#'<<isPrimary<<endl;
   
-  cout<<"These are  colors:";
+  cout<<"These are unique colors:";
   isUnique(hexadecimalValues);
 
   return 0;
@@ -80,7 +81,7 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
   return true;
 }
 
-void isUnique(vector <string> & hColor){
+void isUnique(string hexadecimalValues,vector <string> & hColor){
   for( int uC=0;uC<hColor.size();uC++){
 
     if(hColor[uC]=="000"){
