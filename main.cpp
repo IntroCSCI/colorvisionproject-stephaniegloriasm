@@ -63,7 +63,7 @@ int main(){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
   
-  cout<<"These are unique colors:";
+  cout<<"These are primary colors:";
   isUnique(hexadecimalValues);
 
   return 0;

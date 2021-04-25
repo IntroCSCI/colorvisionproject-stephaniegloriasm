@@ -2,11 +2,11 @@
 
 ## Description
 
-This program helps the user to read the different types of hexadecimal colors that an SVG picture could have. It determines the hexadecimal colors of the file that the user asked for, and it reads one file at a time, so the user would have to run the code again in order to input another file. Palette Analyzer with svg files
+This program helps the user to read the different types of hexadecimal colors that an SVG picture could have. It determines the hexadecimal colors of the file that the user asked for, and it reads one file at a time, so the user would have to run the code again in order to input another file.
 
 ### v0.2 Updates
 
-The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete: being blue, red, yellow, black, and white. In addition, whenever the size of the color is less than 6 characters on the hexadecimal, it checks and lets the user know that.
+The new update allows the program to let the user know which of the colors shown are unique, these are any colors outside the primary pallete being: blue, red, yellow, black, and white.
 
 ### v1.0 Updates
 
@@ -31,22 +31,12 @@ Here is an example of the program running:
 ```
  g++ -std=c++11 *.cpp -o cvp; ./cvp
 Please name a new file: 
-example.svg
+catBW.svg
 The hexadecimal colors of this file are:
-#fff
-#fff
-#436298
-#293
-#192538
-#fff
-#f3e533
-#fff
-#ff7
-#fff
-#bf0000
-#000
-#Dis
-#Der
+#000000
+These are primary colors:#000000
+Those are some nice colors! Please, run the code again to enter a new file!
+
 ```
 
 ## C++ Guide
@@ -98,26 +88,36 @@ This program is using file input get a requested file. The user is asked to inpu
 
 ### Arrays/Vectors
 
-The vector used in this program is called "hexadecimalValues". It makes sure to get the values on the chosen file.
+The vector used in this program stores in the form of a string "hexadecimalValues". It makes sure to get the values on the chosen file. I also added the vector that strings a primary color and an hColor, these are the ones that differentiate the primary/basic colors of a palette to a unique/hard color to find.
 ```
 vector<string>hexadecimalValues;
 
 ```
 
 ### Functions
-It makes sure of sorting these colors as primary or unique, to help the user differentiate these.
+This program uses void to store each one of the defined primary colors.
 
 ```
-int counter;
-void printVec(vector<string>hexadecimalValues){
-  for (int counter = 0; counter < hexadecimalValues.size(); counter++)
-  cout << "The hexadecimal color(s) of this file are/is:\n";
-      cout << '#' << hexadecimalValues[counter] <<endl;{
-        if (hexadecimalValues[counter]=="#000000"||hexadecimalValues[counter]=="#fff"||hexadecimalValues[counter]=="#ff0000"||hexadecimalValues[counter]=="#fff000"||hexadecimalValues[counter]=="#ffffff"||hexadecimalValues[counter]=="#0000ff"){
-          cout<<"These colors are in the primary color range:"<<hexadecimalValues[counter];
-        }
-        else{
-          cout<<"These are unique colors:\n";//<<hexadecimalValues[counter];
+void isUnique(vector <string> & hColor){
+  for( int uC=0;uC<hColor.size();uC++){
+
+    if(hColor[uC]=="000"){
+      hColor[uC]=="000000";
+    }
+    else if(hColor[uC]=="ffffff"){
+      hColor[uC]=="ffffff";
+    }
+    else if(hColor[uC]=="ff"){
+      hColor[uC]=="ff0000";
+    }
+    else if(hColor[uC]=="fff"){
+      hColor[uC]=="fff000";
+    }
+    else if(hColor[uC]=="000fff"){
+      hColor[uC]=="000fff";
+    }
+    cout<<"#"<<hColor[uC]<<endl;
+  }
 ```
 
 ### Classes
