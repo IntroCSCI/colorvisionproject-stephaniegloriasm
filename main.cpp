@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-bool isPrimary(string, const vector<string>&);
+bool isPrimary(string hColor, const vector<string>&);
 void isUnique(vector<string>&);
 
 int main(){
@@ -18,6 +18,7 @@ int main(){
   cout<<"Please name a new file: \n";
   getline(cin, fileName);
 
+  string hColor;
   reader.open(fileName, ios::in);
   vector<string>hexadecimalValues;
 
@@ -62,7 +63,8 @@ int main(){
   for (int counter = 0; counter < hexadecimalValues.size(); counter++){
     cout << '#' << hexadecimalValues[counter] <<endl;
   }
-  cout<< "These colors are primary: "<<'#'<<isPrimary<<endl;
+
+  cout<< "These colors are primary: #"<<isPrimary(line.substr(position), hexadecimalValues)<<endl;
   
   cout<<"These are unique colors:";
   isUnique(hexadecimalValues);
