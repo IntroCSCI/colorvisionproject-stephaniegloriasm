@@ -1,12 +1,13 @@
 //Author: GLORIA
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
-#include "identifier.h"
+#include "identify.h"
 using namespace std;
 
-bool isPrimary(string, const vector<string>&);
+
 void isUnique(vector<string>&);
 
 int main(){
@@ -16,7 +17,7 @@ int main(){
   string line = "";
   vector<string>hexadecimalValues;
   int position;
-  identifier hColors;
+  identify hColors;
 
  do{
    cout<<"Please name a new file: \n";
@@ -72,21 +73,43 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
 }
 
 void isUnique(vector <string> & hColor){
+  string redColor;
+  string greenColor;
+  string blueColor;
+  int red;
+  int green;
+  int blue;
+
+
   for( int uC=0;uC<hColor.size();uC++){
 
-    if(hColor[uC]=="000"||hColor[uC]=="ffffff"){
+    if(hColor[uC]=="000"){
+      hColor[uC]=="ffffff";
+    }
+    else if (hColor[uC]=="fff"){
+      hColor[uC]=="000000";
 
     }
-    else if(hColor[uC]=="ff"){
-      hColor[uC]=="ff0000";
+
+    redColor=hColor[uC].substr(1,2);
+    greenColor=hColor[uC].substr(3,2);
+    blueColor=hColor[uC].substr(5,2);
+
+    stringstream redValue;
+    redValue<<hex<<redColor;
+    redValue>>red;
+
+    stringstream greenValue;
+    greenValue<<hex<<greenColor;
+    greenValue>>green;
+
+    stringstream blueValue;
+    blueValue<<hex<<blueColor;
+    blueValue>>blue;
+
+    if (red-green<=90&&green-blue<=90&&hColor[uC]!="#ffffff"){
+      cout<<"#"<<hColor[uC]<<endl;
     }
-    else if(hColor[uC]=="fff"){
-      hColor[uC]=="fff000";
-    }
-    else if(hColor[uC]=="000fff"){
-      hColor[uC]=="000fff";
-    }
-    cout<<"#"<<hColor[uC]<<endl;
   }
   cout << "Those are some nice colors! Please, run the code again to enter a new file!";
 }

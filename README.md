@@ -10,7 +10,7 @@ The new update allows the program to let the user know which of the colors shown
 
 ### v1.0 Updates
 
-*Coming soon*
+The v1.0 update makes sure to store and determine the rest of the colors that are primary and exclude those that are not. In addition, there is some small changes in the main.cpp to make things more organized, like the addition of string and the mention of the new class. The new class determines fot he colors of the image and separates them to make them unique or primary.
 
 
 ## Developer
@@ -69,7 +69,7 @@ Some of the major Decisions that were used are if statements that helped the col
 
 There is a while loop in this code, and it is used to define the file.
 ```
-while (!reader.eof()) 
+while (!reader.eof())
      {
       getline(reader, line);
       position = line.find("#");
@@ -91,8 +91,6 @@ This program is using file input get a requested file. The user is asked to inpu
 I decided to use vector since it is not a set size for it, and it is convinient for a pallete analyzer. The vector used in this program stores in the form of a string "hexadecimalValues". It makes sure to get the values on the chosen file. I also added the vector that strings a primary color and an hColor, these are the ones that differentiate the primary/basic colors of a palette to a unique/hard color to find.
 ```
 vector<string>hexadecimalValues;
-vector<string> & primaryColor
-vector <string> & hColor
 ```
 
 ### Functions
@@ -110,27 +108,52 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
 }
 
 void isUnique(vector <string> & hColor){
+  string redColor;
+  string greenColor;
+  string blueColor;
+  int red;
+  int green;
+  int blue;
+
+
   for( int uC=0;uC<hColor.size();uC++){
 
     if(hColor[uC]=="000"){
-      hColor[uC]=="000000";
-    }
-    else if(hColor[uC]=="ffffff"){
       hColor[uC]=="ffffff";
     }
-    else if(hColor[uC]=="ff"){
-      hColor[uC]=="ff0000";
+    else if (hColor[uC]=="fff"){
+      hColor[uC]=="000000";
+
     }
-    else if(hColor[uC]=="fff"){
-      hColor[uC]=="fff000";
+
+    redColor=hColor[uC].substr(1,2);
+    greenColor=hColor[uC].substr(3,2);
+    blueColor=hColor[uC].substr(5,2);
+
+    stringstream redValue;
+    redValue<<hex<<redColor;
+    redValue>>red;
+
+    stringstream greenValue;
+    greenValue<<hex<<greenColor;
+    greenValue>>green;
+
+    stringstream blueValue;
+    blueValue<<hex<<blueColor;
+    blueValue>>blue;
+
+    if (red-green<=90&&green-blue<=90&&hColor[uC]!="#ffffff"){
+      cout<<"#"<<hColor[uC]<<endl;
     }
-    else if(hColor[uC]=="000fff"){
-      hColor[uC]=="000fff";
-    }
-    cout<<"#"<<hColor[uC]<<endl;
   }
 ```
 
 ### Classes
 
-*Coming in version 1.0*
+The class identify stores the primary colors of the chosen file. Its member functions are uniqueHColor and isHColor. The functions of it are public, and the variables are private. This new class comes with its own files being .cpp and .h
+```
+using std :: vector;
+using std :: string;
+
+identify::identify():hColor{""}{}
+```
