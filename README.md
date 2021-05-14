@@ -60,14 +60,11 @@ cout<<"Please name a new file: \n";
 
 ### Decisions
 
-Some of the major Decisions that were used are if statements that helped the color values stay within the range that is needed which is 0 to 9, a to f, or A to F. 
-```
-(line[colorValue+3] < '0' || line[colorValue+3] > '9' && line[colorValue+3] < 'a' || line[colorValue+3] > 'f' && line[colorValue+3] < 'A' || line[colorValue+3] > 'F')
-```
+Some of the major Decisions that were used are if statements that helped the color values stay within the range that is needed which is 0 to 9, a to f, or A to F. There is another if statement to determine the opening of the file.
 
 ### Iteration
 
-There is a while loop in this code, and it is used to define the file.
+There is many while loops in this code, and they are used to define the file and find the given colors.
 ```
 while (!reader.eof())
      {
@@ -108,14 +105,7 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
 }
 
 void isUnique(vector <string> & hColor){
-  string redColor;
-  string greenColor;
-  string blueColor;
-  int red;
-  int green;
-  int blue;
-
-
+  
   for( int uC=0;uC<hColor.size();uC++){
 
     if(hColor[uC]=="000"){
@@ -124,26 +114,7 @@ void isUnique(vector <string> & hColor){
     else if (hColor[uC]=="fff"){
       hColor[uC]=="000000";
 
-    }
-
-    redColor=hColor[uC].substr(1,2);
-    greenColor=hColor[uC].substr(3,2);
-    blueColor=hColor[uC].substr(5,2);
-
-    stringstream redValue;
-    redValue<<hex<<redColor;
-    redValue>>red;
-
-    stringstream greenValue;
-    greenValue<<hex<<greenColor;
-    greenValue>>green;
-
-    stringstream blueValue;
-    blueValue<<hex<<blueColor;
-    blueValue>>blue;
-
-    if (red-green<=90&&green-blue<=90&&hColor[uC]!="#ffffff"){
-      cout<<"#"<<hColor[uC]<<endl;
+   cout<<"#"<<hColor[uC]<<endl;
     }
   }
 ```

@@ -6,7 +6,8 @@
 using std :: string;
 using std :: vector;
 
-class identifier{
+class identifier
+{
   private:
     int counter;
     string hColor;

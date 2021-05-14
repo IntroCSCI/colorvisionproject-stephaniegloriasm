@@ -17,7 +17,7 @@ int main(){
   string line = "";
   vector<string>hexadecimalValues;
   int position;
-  identify hColors;
+  identify hColor;
 
  do{
    cout<<"Please name a new file: \n";
@@ -37,10 +37,10 @@ int main(){
       while (position<line.size()) 
       {
         string hexadecimalValues=line.substr(position);
-        hColors.isHColor(colorValueString);
+        hColor.isHColor(colorValueString);
 
-        if (hColors.uniqueHColor(hexadecimalValues)!=""){
-          hexadecimalValues.push_back(hColors.uniqueHColor(hexadecimalValues));
+        if (hColor.uniqueHColor(hexadecimalValues)!=""){
+          hexadecimalValues.push_back(hColor.uniqueHColor(hexadecimalValues));
         }
         position=line.find("#",position+1);
       }
@@ -73,14 +73,7 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
 }
 
 void isUnique(vector <string> & hColor){
-  string redColor;
-  string greenColor;
-  string blueColor;
-  int red;
-  int green;
-  int blue;
-
-
+  
   for( int uC=0;uC<hColor.size();uC++){
 
     if(hColor[uC]=="000"){
@@ -89,26 +82,7 @@ void isUnique(vector <string> & hColor){
     else if (hColor[uC]=="fff"){
       hColor[uC]=="000000";
 
-    }
-
-    redColor=hColor[uC].substr(1,2);
-    greenColor=hColor[uC].substr(3,2);
-    blueColor=hColor[uC].substr(5,2);
-
-    stringstream redValue;
-    redValue<<hex<<redColor;
-    redValue>>red;
-
-    stringstream greenValue;
-    greenValue<<hex<<greenColor;
-    greenValue>>green;
-
-    stringstream blueValue;
-    blueValue<<hex<<blueColor;
-    blueValue>>blue;
-
-    if (red-green<=90&&green-blue<=90&&hColor[uC]!="#ffffff"){
-      cout<<"#"<<hColor[uC]<<endl;
+   cout<<"#"<<hColor[uC]<<endl;
     }
   }
   cout << "Those are some nice colors! Please, run the code again to enter a new file!";
