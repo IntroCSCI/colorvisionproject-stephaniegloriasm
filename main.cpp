@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "identifier.h"
 using namespace std;
 
 bool isPrimary(string, const vector<string>&);
@@ -12,17 +13,19 @@ int main(){
 
   string fileName = "";
   ifstream reader;
-  string line = " ";
-  size_t position;
- 
-  cout<<"Please name a new file: \n";
-  getline(cin, fileName);
-
-  reader.open(fileName, ios::in);
+  string line = "";
   vector<string>hexadecimalValues;
+  size_t position;
 
-  if ( reader.is_open() )
+ do{
+   cout<<"Please name a new file: \n";
+   getline(cin, fileName);
+   reader.open(fileName, ios::in);
+  }
+
+  while (!reader.is_open());
   {
+    if (reader.is_open())
 
      while (!reader.eof())
      {
@@ -83,11 +86,8 @@ bool isPrimary(string hColor, const vector<string> & primaryColor){
 void isUnique(vector <string> & hColor){
   for( int uC=0;uC<hColor.size();uC++){
 
-    if(hColor[uC]=="000"){
-      hColor[uC]=="000000";
-    }
-    else if(hColor[uC]=="ffffff"){
-      hColor[uC]=="ffffff";
+    if(hColor[uC]=="000"||hColor[uC]=="ffffff"){
+
     }
     else if(hColor[uC]=="ff"){
       hColor[uC]=="ff0000";
