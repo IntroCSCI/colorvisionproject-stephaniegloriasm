@@ -41,7 +41,7 @@ int main(){
         if (hColors.uniqueHColor(hexadecimalValues)!=""){
           hexadecimalValues.push_back(hColors.uniqueHColor(hexadecimalValues));
         }
-        position=line.find("#",postion+1);
+        position=line.find("#",position+1);
       }
      }
        
