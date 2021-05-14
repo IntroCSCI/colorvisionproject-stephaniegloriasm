@@ -15,7 +15,8 @@ int main(){
   ifstream reader;
   string line = "";
   vector<string>hexadecimalValues;
-  size_t position;
+  int position;
+  identifier hColors;
 
  do{
    cout<<"Please name a new file: \n";
@@ -32,31 +33,18 @@ int main(){
       getline(reader, line);
       position = line.find("#");
 
-      if (line[position]) 
+      while (position<line.size()) 
       {
-        int colorValue;
+        string hexadecimalValues=line.substr(position);
+        hColors.isHColor(colorValueString);
 
-        for (colorValue = position += 1; colorValue < line.size() && (line[colorValue] >= '0' && line[colorValue] <= '9'|| line[colorValue] >= 'a' && line[colorValue] <= 'f' || line[colorValue] >= 'A' && line[colorValue] <= 'F'); colorValue++) {
-
-          if (line[colorValue+3] < '0' || line[colorValue+3] > '9' && line[colorValue+3] < 'a' || line[colorValue+3] > 'f' && line[colorValue+3] < 'A' || line[colorValue+3] > 'F')
-          {
-            if(isPrimary(line.substr(position, 3), hexadecimalValues)==true)
-            {
-              hexadecimalValues.push_back(line.substr(position, 3));
-              break;
-            }
-          }
-          else
-          {
-
-            if(isPrimary(line.substr(position, 6), hexadecimalValues)==true){
-                hexadecimalValues.push_back(line.substr(position, 6));
-                break;
-            }
-          }
+        if (hColors.uniqueHColor(hexadecimalValues)!=""){
+          hexadecimalValues.push_back(hColors.uniqueHColor(hexadecimalValues));
         }
+        position=line.find("#",postion+1);
       }
      }
+       
   }
   
   reader.close();
