@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void isUnique(vector<string>&);
+void isUnique(vector<string> &);
 
 int main(){
 
@@ -29,7 +29,7 @@ int main(){
   {
     if (reader.is_open())
 
-     while (!reader.eof())
+     if (reader.eof())
      {
       getline(reader, line);
       position = line.find("#");
