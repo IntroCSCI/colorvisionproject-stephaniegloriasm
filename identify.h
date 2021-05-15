@@ -6,15 +6,20 @@
 using std :: string;
 using std :: vector;
 
-class identifier
+class identify
 {
   private:
     int counter;
     string hColor;
+    string primaryColor;
 
   public
-    identifier();
+    identify();
+    bool isPrimary(string hColor, const vector<string> &primaryColor
+    void isUnique(vector<string>& hColor);
     void isHColor(string);
+    string hexadecimalValues;
+    string fileName;
     string uniqueHColor(const vector<string> &);
 }
 #endif
