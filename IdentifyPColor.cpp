@@ -1,15 +1,15 @@
 #include <string>
 #include <vector>
-#include "identify.h"
+#include "IdentifyPColor.h"
 
 using std :: vector;
 using std :: string;
 
-identify::identify():hColor{" "}
+IdentifyPColor::IdentifyPColor():hColor{" "}
 {
 }
 
-void identify::isHColor(string colorValueString){
+void IdentifyPColor::isHColor(string colorValueString){
   counter=0;
   for (int colorValue=1; colorValue<colorValueString.size();colorValue++){
     if((colorValueString[colorValue] >= '0' && colorValueString[colorValue] <= '9'|| colorValueString[colorValue] >= 'a' && colorValueString[colorValue] <= 'f' || colorValueString[colorValue] >= 'A' && colorValueString[colorValue] <= 'F'))
@@ -27,7 +27,7 @@ void identify::isHColor(string colorValueString){
     hColor=colorValueString.substr(0,4);
   }
 }
-string identify::primaryHColor(const vector<string>&primaryColor){
+string IdentifyPColor::primaryHColor(const vector<string>&primaryColor){
   for(int pC=0;pc<primaryColor.size();pC++){
     if (primaryColor[pC]==hColor){
       return " ";
