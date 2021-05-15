@@ -39,11 +39,15 @@ int main(){
         string hexadecimalValues=line.substr(position);
         hColor.isHColor(colorValueString);
 
-        if (hColor.uniqueHColor(hexadecimalValues)!=""){
-          hexadecimalValues.push_back(hColor.uniqueHColor(hexadecimalValues));
+        if (hColor.primaryHColor(hexadecimalValues)!=""){
+          hexadecimalValues.push_back(hColor.primaryHColor(hexadecimalValues));
         }
         position=line.find("#",position+1);
       }
+       if (hColor.primaryHColor(hexadecimalValues)!=""){
+          hexadecimalValues.push_back(hColor.primaryHColor(hexadecimalValues));
+        }
+        position=line.find("#",position+3);
      }
        
   }
