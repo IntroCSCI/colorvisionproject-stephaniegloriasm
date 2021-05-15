@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include "identify.h"
+#include "IdentifyPColor.h"
 using namespace std;
 
 
@@ -17,7 +17,7 @@ int main(){
   string line = "";
   vector<string>hexadecimalValues;
   int position;
-  identify hColor;
+  IdentifyPColor hColor;
 
  do{
    cout<<"Please name a new file: \n";
