@@ -1,12 +1,12 @@
-#define INDENTIFY_H
-#ifndef INDENTIFY_H
+#define INDENTIFYPCOLOR_H
+#ifndef INDENTIFYPCOLOR_H
 #include <string>
 #include <vector>
 
 using std :: string;
 using std :: vector;
 
-class identify
+class IdentifyPColor
 {
   private:
     int counter;
@@ -14,7 +14,7 @@ class identify
     string primaryColor;
 
   public
-    identify();
+    IdentifyPColor();
     bool isPrimary(string hColor, const vector<string> &primaryColor
     void isUnique(vector<string>& hColor);
     void isHColor(string);
