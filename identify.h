@@ -20,6 +20,6 @@ class identify
     void isHColor(string);
     string hexadecimalValues;
     string fileName;
-    string uniqueHColor(const vector<string> &);
+    string primaryHColor(const vector<string> &);
 }
 #endif
