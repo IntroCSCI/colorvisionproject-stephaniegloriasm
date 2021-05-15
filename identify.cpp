@@ -5,7 +5,9 @@
 using std :: vector;
 using std :: string;
 
-identify::identify():hColor{""}{}
+identify::identify():hColor{" "}
+{
+}
 
 void identify::isHColor(string colorValueString){
   counter=0;
@@ -25,10 +27,10 @@ void identify::isHColor(string colorValueString){
     hColor=colorValueString.substr(0,4);
   }
 }
-string identify::uniqueHColor(const vector<string>&primaryColor){
+string identify::primaryHColor(const vector<string>&primaryColor){
   for(int pC=0;pc<primaryColor.size();pC++){
     if (primaryColor[pC]==hColor){
-      return "";
+      return " ";
     }
   }
   return hColor;
