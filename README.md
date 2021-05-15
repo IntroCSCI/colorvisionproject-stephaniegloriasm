@@ -121,10 +121,10 @@ void isUnique(vector <string> & hColor){
 
 ### Classes
 
-The class identify stores the primary colors of the chosen file. Its member functions are uniqueHColor and isHColor. The functions of it are public, and the variables are private. This new class comes with its own files being .cpp and .h
+The class IdentifyPColor stores the primary colors of the chosen file. Its member functions are primaryHColor and isHColor. The functions of it are public, and the variables are private. This new class comes with its own files being .cpp and .h
 ```
 using std :: vector;
 using std :: string;
 
-identify::identify():hColor{""}{}
+IdentifyPColor::IdentifyPColor():hColor{""}{}
 ```
