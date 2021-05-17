@@ -10,7 +10,7 @@ The new update allows the program to let the user know which of the colors shown
 
 ### v1.0 Updates
 
-The v1.0 update makes sure to store and determine the rest of the colors that are primary and exclude those that are not. In addition, there is some small changes in the main.cpp to make things more organized, like the addition of string and the mention of the new class. The new class determines fot he colors of the image and separates them to make them unique or primary.
+The v1.0 update makes sure to store and determine the rest of the colors that are primary and exclude those that are not. In addition, there is some small changes in the main.cpp to make things more organized, like the addition of string and the mention of the new class. The new class determines the colors of the image and separates them to make them unique or primary.
 
 
 ## Developer
@@ -81,7 +81,7 @@ for (int counter = 0; counter < hexadecimalValues.size(); counter++){
 ```
 ### File Input and Output
 
-This program is using file input get a requested file. The user is asked to input a file and the output of the file are the hexadecimal colors that are displayed on the screen in order to help the user indentify each color in the image.
+This program is using file input get a requesting file. The user is asked to input a file, and the output of the file are the hexadecimal colors that are displayed on the screen in order to help the user indentify each color in the image. There is the use of the fstream, sstream libraries to open, read and write into the files of the code.
 
 ### Arrays/Vectors
 
